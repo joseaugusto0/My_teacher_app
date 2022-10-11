@@ -1,9 +1,11 @@
 import { Button } from "@mui/material";
 import { Teacher } from "../../@types/Teacher";
+import { FormatterService } from "../../services/FormatterService";
 import { Description, Infos, ListItem, Name, NullList, Photo, StyledLists, Value } from "./List.style";
 
 interface PropsList {
     teachers: Teacher[],
+    onSelect: (teacher:Teacher) => void
 }
 
 const List = (props: PropsList) => {
@@ -16,9 +18,9 @@ const List = (props: PropsList) => {
                         <Photo src={teacher.photo}/>
                         <Infos>
                             <Name>{teacher.name}</Name>
-                            <Value>{teacher.hour_value.toLocaleString('pt-BR', {minimumFractionDigits:2, style: 'currency', currency: 'BRL'})} por hora</Value>
-                            <Description>{teacher.description}</Description>
-                            <Button sx={{width: '70%'}}>Book Class with Zézão</Button>
+                            <Value>{FormatterService.monetaryValue(teacher.hour_value)} por hora</Value>
+                            <Description>{FormatterService.limitDescription(teacher.description)}</Description>
+                            <Button sx={{width: '70%'}} onClick={() => props.onSelect(teacher)}>Book Class with {teacher.name}</Button>
                         </Infos>
                     </ListItem>
                 ))}
