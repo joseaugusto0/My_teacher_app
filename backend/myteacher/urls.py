@@ -7,7 +7,6 @@ from teacher.views import GetTeachersView, CreateClassView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/', HomeApiView.as_view()),
     path('teachers/', GetTeachersView.as_view()),
     path('teachers/<int:id>/classes', CreateClassView.as_view()),
 ]
