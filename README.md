@@ -1,4 +1,9 @@
 # MyTeacherApp - TreinaWeb Workshop
+
+
+![My Teacher Logo](/frontend/my-app/public/images/myteacher.png)
+
+---
 ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
